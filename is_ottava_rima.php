@@ -71,8 +71,8 @@ function is_iambic_pentameter($line, $syllable_tolerance) {
     foreach ($words as $word) {
         $syllable_count += estimate_syllables($word);
     }
-    $min_syllable_count = 10 - $syllable_count;
-    $max_syllable_count = 10 + $syllable_count;
+    $min_syllable_count = 10 - $syllable_tolerance;
+    $max_syllable_count = 10 + $syllable_tolerance;
     return $syllable_count >= $min_syllable_count && $syllable_count <= $max_syllable_count;
 }
 
